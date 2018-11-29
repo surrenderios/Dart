@@ -2,11 +2,11 @@
 
 以下内容精简自[官方文档](http://dart.goodev.org/guides/language/language-tour#a-basic-dart-program一个最基本的-dart-程序)，添加了一些个人学习时的见解
 
-##简介
+## 简介
 Dart 是谷歌在 2011 年推出的编程语言，是一门全平台的语言，不仅可以开发服务端，现在借助于 flutter 也可以开发原生 Android 和 iOS 应用。
 
 
-##示例
+## 示例
 
 ```
 //声明方法
@@ -25,12 +25,12 @@ main(){
 
 ```
 
-##关键字
+## 关键字
 
 几乎所有编程的关键字都差不多，不必刻意记，借助 IDE 的提醒即可规避。 
 更多可参考 [关键字列表](https://www.dartlang.org/guides/language/language-tour#keywords)
 
-##变量
+## 变量
 
 * 声明变量并赋值 
 
@@ -56,7 +56,7 @@ String name = 'alex';
 final 定义的变量是运行时确定的值，只能在第一次初始化被赋值
 const 定义的是在编译时就确定了值
 
-##内置类型
+## 内置类型
 Dart 内置支持下面这些类型:
 
 * numbers
@@ -109,9 +109,9 @@ if (name) {
 * symbols
 略
 
-##方法
+## 方法
 
-###基本方法
+### 基本方法
 Dart 一个方法的基本构成:
 
 ```
@@ -142,7 +142,7 @@ isNoble(atomicNumber) {
 bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
 ```
 
-###方法参数
+### 方法参数
 
 * 基本方法参数
 
@@ -207,7 +207,7 @@ list.forEach(printElement);
 
 ```
 
-###匿名方法
+### 匿名方法
 声明的不带方法名字的方法我们称之为 lamda 或者 closure(闭包)
 在括号之间可以定义一些参数，参数使用逗号分割，也可以是可选参数，后面大括号中的代码为函数体
 
@@ -224,33 +224,33 @@ list.forEach((i) {
 });
 ```
 
-###静态作用域
+### 静态作用域
 
 Dart 是静态作用域语言，变量的作用域在写代码的时候就确定过了。 基本上大括号里面定义的变量就只能在大括号里面访问，和 Java 作用域类似
 
-###词法闭包
+### 词法闭包
 
 一个闭包是一个方法对象，不管该对象在何处被调用，该对象都可以访问其作用域内的变量
 
-###测试函数是否相等
+### 测试函数是否相等
 
 使用 == 来比较函数是否相等
 
-###返回值
+### 返回值
 
 所有的函数都返回一个值，如果没有指定返回值，则默认把语句 return null; 作为函数的最后一个语句执行
 
 
-##操作符
+## 操作符
 基本操作符同其它语言类似，此处略，下面说不同的几种操作符
 
-###类型判定操作符
+### 类型判定操作符
 
 **as**  类型转换符
 **is**  判定是否为指定类型， 如果是返回 True
 **is!** 判断是否为指定类型， 如果是返回 False
 
-###赋值操作符
+### 赋值操作符
 
 使用 = 操作符来赋值。 但是还有一个 ??= 操作符用来指定值为 null 的变量的值
 ```
@@ -259,7 +259,7 @@ b ??= value; // 如果 b 是 null，则赋值给 b；
              // 如果不是 null，则 b 的值保持不变
 ```
  
-###级联操作符   
+### 级联操作符   
 
 级联操作符 (..) 可以在同一个对象上连续调用多个函数以及访问成员变量。使用级联操作符可以避免创建临时变量，并且写出来的代码看起来更加流畅
 
@@ -280,11 +280,11 @@ button.text = 'Confirm';
 button.classes.add('important');
 button.onClick.listen((e) => window.alert('Confirmed!'));
 ```     
-##流程控制
+## 流程控制
 
 大部分和其它语言基本一致，只说不太一样的
 
-###Switch and case
+### Switch and case
 
 Dart 可以支持同类型的 Switch，例如  integer、string、或者编译时常量，采用的是 == 来进行比较。
 
@@ -311,9 +311,9 @@ switch (command) {
 }
 ```
 
-##类
+## 类
 
-###基本简介
+### 基本简介
 * Dart 是一个面向对象编程语言，所有的类都继承于 Object.
 
 * 使用 new 关键字和构造函数来创建新的对象。 构造函数名字可以为 ClassName 或者 ClassName.identifier。例如：
@@ -365,7 +365,7 @@ assert(identical(a， b)); // They are the same instance!
 print('The type of a is ${a.runtimeType}');
 ```             
 
-###Instance variables
+### Instance variables
 
 * 所有没有初始化的变量值都是 null，每个实例变量都会自动生成一个 getter 方法（隐含的）。 Non-final 实例变量还会自动生成一个 setter 方法
 
@@ -377,9 +377,9 @@ class Point {
   num z = 0; // Declare z， initially 0.
 }
 ```
-###构造函数
+### 构造函数
 
-####普通构造函数
+#### 普通构造函数
 
 定义一个和类名字一样的方法就定义了一个构造函数，还可以带有其他可选的标识符
 
@@ -432,7 +432,7 @@ class Point {
 }
 ```
 
-####重定向构造函数
+#### 重定向构造函数
 
 有时候一个构造函数会调动类中的其他构造函数。 一个重定向构造函数是没有代码的，在构造函数声明后，使用冒号调用其他构造函数
 
@@ -449,7 +449,7 @@ class Point {
 }
 ```
 
-####常量构造函数
+#### 常量构造函数
 
 如果你的类提供一个状态不变的对象，你可以把这些对象 定义为编译时常量。要实现这个功能，需要定义一个 const 构造函数， 并且声明所有类的变量为 final
 
@@ -462,7 +462,7 @@ class ImmutablePoint {
       const ImmutablePoint(0， 0);
 }
 ```
-####工厂方法构造函数
+#### 工厂方法构造函数
 
 如果一个构造函数并不总是返回一个新的对象，则使用 factory 来定义 这个构造函数。例如，一个工厂构造函数 可能从缓存中获取一个实例并返回，或者 返回一个子类型的实例
 
@@ -496,14 +496,14 @@ class Logger {
 }
 ```
 
-###函数
-####实例函数
+### 函数
+#### 实例函数
 略
 
-####Getters and setters
+#### Getters and setters
 略
 
-####抽象函数
+#### 抽象函数
 
 抽象函数是只定义函数接口但是没有实现的函数，由子类来 实现该函数。如果用分号来替代函数体则这个函数就是抽象函数
 
@@ -520,11 +520,11 @@ class EffectiveDoer extends Doer {
   }
 }
 ```
-
-####可覆写的操作符
+ 
+#### 可覆写的操作符
 略
 
-###抽象类
+### 抽象类
 
 使用 abstract 修饰符定义一个抽象类，一个不能被实例化的类。 抽象类通常用来定义接口，以及部分实现
 
@@ -538,7 +538,7 @@ abstract class AbstractContainer {
 }
 ```
 
-###隐式接口
+### 隐式接口
 
 每个类都隐式的定义了一个包含所有实例成员的接口， 并且这个类实现了这个接口。如果你想创建类 A 来支持类B的 api，而不想继承B的实现， 则类 A 应该实现 B 的接口。
 
@@ -566,7 +566,7 @@ class Imposter implements Person {
 }
 ```
 
-###扩展类
+### 扩展类
 
 使用 extends 定义子类， supper 引用 超类：
 
@@ -593,7 +593,7 @@ class SmartTelevision extends Television {
 子类可以覆写实例函数，使用 @override 注解来表明你的函数是想覆写超类的一个函数
 
 
-###枚举类型
+### 枚举类型
 使用 enum 关键字来定义枚举类型
 
 ```
@@ -610,18 +610,18 @@ enum Color {
 List<Color> colors = Color.values;
 assert(colors[2] == Color.blue);
 ```
-###Adding features to a class: mixins
+### Adding features to a class: mixins
 Mixins 是一种在多类继承中重用 一个类代码的方法。
 
 使用 with 关键字后面为一个或者多个 mixin 名字来使用 mixin。
 
 
-##泛型
+## 泛型
 
-###为什么使用泛型
+### 为什么使用泛型
 在 Dart 中类型是可选的，你可以选择不用泛型。 有些情况下你可能想使用类型来表明你的意图， 不管是使用泛型还是 具体类型， 但在一些情况下， 可以不指定具体的类型让代码的限制更加宽泛化， 减少重复的代码.
 
-###使用集合字面量
+### 使用集合字面量
 参数化定义 list 需要在中括号之前 添加 <type> ， 定义 map 需要在大括号之前 添加 <keyType， valueType>。 如果你需要更加安全的类型检查，则可以使用 参数化定义，例如:
 
 ```
@@ -633,7 +633,7 @@ var pages = <String， String>{
 };
 ```
 
-###限制泛型类型
+### 限制泛型类型
 使用 extends 可以实现对泛型类型的限制， 例如:
 
 ```
@@ -656,7 +656,7 @@ void main() {
 }
 ```
 
-####使用泛型函数
+#### 使用泛型函数
 
 ```
 T first<T>(List<T> ts) {
@@ -668,8 +668,8 @@ T first<T>(List<T> ts) {
 ```
 
 
-##库
-###导入
+## 库
+### 导入
 使用 import 来指定一个库如何使用另外 一个库
 
 ```
@@ -677,7 +677,7 @@ import 'dart:io';
 import 'package:mylib/mylib.dart';
 import 'package:utils/utils.dart';
 ```
-###指定库前缀
+### 指定库前缀
 如果你导入的两个库具有冲突的标识符， 则你可以使用库的前缀来区分。 例如，如果 library1 和 library2 都有一个名字为 Element 的类， 你可以这样使用
 
 ```
@@ -687,7 +687,7 @@ import 'package:lib2/lib2.dart' as lib2;
 Element element1 = new Element();           // Uses Element from lib1.
 lib2.Element element2 = new lib2.Element(); // Uses Element from lib2.
 ```
-###导入库的一部分
+### 导入库的一部分
 
 ```
 // Import only foo.
@@ -697,7 +697,7 @@ import 'package:lib1/lib1.dart' show foo;
 import 'package:lib2/lib2.dart' hide foo;
 ```
 
-###延迟载入库
+### 延迟载入库
 
 Deferred loading (也称之为 lazy loading) 可以让应用在需要的时候再 加载库。 下面是一些使用延迟加载库的场景：
 
@@ -718,7 +718,7 @@ greet() async {
 }
 ```
 
-##异步支持
+## 异步支持
 Dart 有一些语言特性来支持 异步编程。 最常见的特性是 async 方法和 await 表达式.
 Dart 库中有很多返回 Future 或者 Stream 对象的方法。 这些方法是 异步的， async 表示异步执行后面代码块中的代码， 认为后面的为耗时操作. await 则是等待后面代码块的执行， 会阻塞后面的操作。  所以需要配合使用 async 和 await. 例如:
 
@@ -738,9 +738,9 @@ checkVersion() async {
 可以使用 try， catch， 和 finally 来处理使用 await 的异常：
 
 
-##可调用的类
+## 可调用的类
 
-###Call
+### Call
 如果 Dart 类实现了 call() 函数则 可以当做方法来调用。 **个人认为可将其视为一个匿名构造函数**
 
 ```
@@ -754,12 +754,12 @@ main() {
   print('$out');
 }
 ```
-###Isolates
+### Isolates
 现代的浏览器以及移动浏览器都运行在多核 CPU 系统上。 要充分利用这些 CPU，开发者一般使用共享内存 数据来保证多线程的正确执行。然而， 多线程共享数据通常会导致很多潜在的问题，并导致代码运行出错。
 
 所有的 Dart 代码在 isolates 中运行而不是线程。 每个 isolate 都有自己的堆内存，并且确保每个 isolate 的状态都不能被其他 isolate 访问
 
-###Typedefs
+### Typedefs
 在 Dart 语言中，方法也是对象。 使用 typedef， 或者 function-type alias 来为方法类型命名， 然后可以使用命名的方法。 当把方法类型赋值给一个变量的时候，typedef 保留类型信息
 
 ```
@@ -780,7 +780,7 @@ main() {
   assert(coll.compare is Compare);
 }
 ```
-###Metadata
+### Metadata
 使用元数据给你的代码添加其他额外信息。 元数据注解是以 @ 字符开头，后面是一个编译时 常量(例如 deprecated)或者 调用一个常量构造函数
 
 有三个注解所有的 Dart 代码都可以使用： @deprecated、 @override、 和 @proxy
@@ -808,7 +808,7 @@ void doSomething() {
   print('do something');
 }
 ```
-###注释
+### 注释
 同其它语言一致，略
 
 
